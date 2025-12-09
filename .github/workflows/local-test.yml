@@ -8,9 +8,9 @@ on:
       - '*'
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: npm ci
       - name: Testing / Linting
         run: npm run test
@@ -42,9 +42,9 @@ jobs:
           content: 'With mirth and laughter let old wrinkles come.'
         if: ${{ steps.enable_integration_tests.outputs.value == 'true' }}
   failure:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: npm ci
       - name: Testing / Linting
         run: npm run test
